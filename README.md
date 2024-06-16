@@ -18,7 +18,7 @@ CUDA_VISIBLE_DEVICES=<gpu_idx> python train.py --data_path<dir_path_storing_prep
  --backbone_path=<path_to_pointm2ae_ckpt> \
  --lr=0.003 \
  --batch_size=16 \
- --category chair airplane knife \
+ --category chair knife \
  --n_epoch=25 \
  --exp_suffix=exp1
 ```
@@ -29,7 +29,7 @@ CUDA_VISIBLE_DEVICES=8 python train.py --data_path=/disk2/aumam/dataset/shapenet
  --backbone_path=/disk2/aumam/dev/multimodal_distillation/checkpoints/point_m2ae_pre-train.pth \
  --lr=0.003 \
  --batch_size=16 \
- --category chair airplane knife \
+ --category chair knife \
  --n_epoch=25 \
  --exp_suffix=exp1
 ```
