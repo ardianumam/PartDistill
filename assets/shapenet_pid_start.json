@@ -1,0 +1,18 @@
+{
+    "airplane":0,
+    "bag":4,
+    "cap":6,
+    "car":8,
+    "chair":12,
+    "earphone":16,
+    "guitar":19,
+    "knife":22,
+    "lamp":24,
+    "laptop":28,
+    "motorbike":30,
+    "mug":36,
+    "pistol":38,
+    "rocket":41,
+    "skateboard":44,
+    "table":47
+}
