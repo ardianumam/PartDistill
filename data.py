@@ -52,7 +52,7 @@ def get_shapenet_distill_list(set_data='train', category='chair', data_path="", 
     for item in set_list:
         if id_cls_item in item:
             full_path = item.replace("shape_data/", "")
-            full_path = os.path.join(data_path, full_path, "extracted/aggregated_v2.h5")
+            full_path = os.path.join(data_path, full_path, "extracted/preprocess.h5")
             set_list_selected.append(full_path)
             counter += 1
             if IS_DEBUG and counter >=32:
