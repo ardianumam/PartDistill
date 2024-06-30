@@ -6,14 +6,15 @@ This is the official repository of our CVPR 2024 paper, "PartDistill: 3D Shape P
 
 <img src="assets/partdistill_animate.gif" width="600">
 
-## Data
-* The prapared data can be downloaded [here](https://drive.google.com/drive/folders/1kzugzkn_9dO-37GcnaQm2qmt4MO7Fw-B?usp=sharing). The content details are explained in [data_format.md](data_format.md)
-* Point-M2AE model can be download [here](https://github.com/ZrrSkywalker/Point-M2AE?tab=readme-ov-file)
+## Data and required 3D backbone checkpoint (Point-M2AE)
+* The prapared data can be downloaded [here](https://drive.google.com/drive/folders/1kzugzkn_9dO-37GcnaQm2qmt4MO7Fw-B?usp=sharing). The content details are explained in [data_format.md](data_format.md). After downloading, please extract the zip file.
+* Point-M2AE checkpoint can be download [here](https://drive.google.com/file/d/1MEvP6Z2isR67q3xJbnB_X43EHkxoJwx-/view?usp=sharing)
 
 ## Train
 To train the model, please use script bellow
 ```
-CUDA_VISIBLE_DEVICES=<gpu_idx> python train.py --data_path<dir_path_storing_preprocessed_data> \
+CUDA_VISIBLE_DEVICES=<gpu_idx> python train.py \
+ --data_path<dir_path_storing_preprocessed_data> \
  --ckpt_dir=<dir_to_store_ckpt> \
  --backbone_path=<path_to_pointm2ae_ckpt> \
  --lr=0.003 \
@@ -24,7 +25,8 @@ CUDA_VISIBLE_DEVICES=<gpu_idx> python train.py --data_path<dir_path_storing_prep
 ```
 For example:
 ```
-CUDA_VISIBLE_DEVICES=8 python train.py --data_path=/disk2/aumam/dataset/shapenet/shapenetcore_partanno_distill \
+CUDA_VISIBLE_DEVICES=8 python train.py \
+ --data_path=/disk2/aumam/dataset/shapenet/shapenet_preprocessed_partdistill \
  --ckpt_dir=/disk2/aumam/dev/multimodal_distillation/checkpoints \
  --backbone_path=/disk2/aumam/dev/multimodal_distillation/checkpoints/point_m2ae_pre-train.pth \
  --lr=0.003 \
